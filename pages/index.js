@@ -166,7 +166,7 @@ export default function Home() {
         {/* Genre Buttons with Images */}
         <div id="genres" style={{
           display: "flex",
-          gap: "2.2rem",
+          gap: "2.7rem",
           marginTop: "1rem",
           marginBottom: "4rem",
           flexWrap: "wrap",

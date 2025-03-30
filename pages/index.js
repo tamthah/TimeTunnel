@@ -7,12 +7,12 @@ export default function Home() {
   const [year, setYear] = useState("");
 
   const genres = [
-    { name: "Pop", image: "/images/pop.jpg" },
-    { name: "Rock", image: "/images/rock.jpg" },
-    { name: "Latin", image: "/images/latin.jpg" },
-    { name: "HipHop", image: "/images/hiphop.jpg" },
-    { name: "R&B", image: "/images/rnb.jpg" },
-    { name: "Country", image: "/images/country.jpg" },
+    { name: "Pop", label: "Pop", image: "/images/pop.jpg" },
+    { name: "Rock", label: "Rock", image: "/images/rock.jpg" },
+    { name: "Latin", label: "Latin", image: "/images/latin.jpg" },
+    { name: "HipHop", label: "Hiphop", image: "/images/hiphop.jpg" },
+    { name: "randb", label: "R&B", image: "/images/rnb.jpg" },
+    { name: "Country", label: "Country", image: "/images/country.jpg" },
   ];
 
   const navLinkStyle = {
@@ -186,7 +186,7 @@ export default function Home() {
         <img src={genre.image} alt={genre.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </div>
       <span style={{ color: "#fff", fontSize: "1.05rem", textShadow: "0 0 4px #1e3a8a" }}>
-        {genre.name}
+        {genre.label}
       </span>
     </div>
   </a>

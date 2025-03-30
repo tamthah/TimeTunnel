@@ -25,10 +25,10 @@ globalThis.__BUILD_MANIFEST = {
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/result": [
+    "/genres/[genre]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/result.js"
+      "static/chunks/pages/genres/[genre].js"
     ]
   },
   "ampFirstPages": []

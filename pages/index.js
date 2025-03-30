@@ -168,25 +168,30 @@ export default function Home() {
           justifyContent: "center"
         }}>
           {genres.map((genre) => (
-            <div key={genre.name} style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-              <div style={{
-                width: "120px",
-                height: "120px",
-                borderRadius: "50%",
-                overflow: "hidden",
-                border: "5px solid #1e3a8a",
-                boxShadow: "0 0 12px #1e3a8a",
-                marginBottom: "0.7rem"
-              }}>
-                <img src={genre.image} alt={genre.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              </div>
-              <span style={{
-                color: "#fff",
-                fontSize: "1.05rem",
-                textShadow: "0 0 4px #1e3a8a"
-              }}>{genre.name}</span>
-            </div>
-          ))}
+  <a
+    key={genre.name}
+    href={`/genres/${genre.name.toLowerCase()}`}
+    style={{ textDecoration: 'none' }}
+  >
+    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <div style={{
+        width: "120px",
+        height: "120px",
+        borderRadius: "50%",
+        overflow: "hidden",
+        border: "5px solid #1e3a8a",
+        boxShadow: "0 0 12px #1e3a8a",
+        marginBottom: "0.7rem"
+      }}>
+        <img src={genre.image} alt={genre.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      </div>
+      <span style={{ color: "#fff", fontSize: "1.05rem", textShadow: "0 0 4px #1e3a8a" }}>
+        {genre.name}
+      </span>
+    </div>
+  </a>
+))}
+
         </div>
       </main>
 

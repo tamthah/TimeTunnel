@@ -65,7 +65,7 @@ export default function ResultPage() {
         </div>
 
         <div style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.4)", padding: "1rem", borderRadius: "1rem", border: "2px solid #ff00ff" }}>
-          <h2 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>Top 5 Songs</h2>
+          <h2 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>Top 10 Songs</h2>
           <ol>
             {topSongs.map((song, i) => (
               <li key={i} style={{ marginBottom: "0.5rem" }}>

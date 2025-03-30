@@ -7,12 +7,12 @@ export default function Home() {
   const [year, setYear] = useState("");
 
   const genres = [
-    { name: "Pop", label: "Pop", image: "/images/pop.jpg" },
-    { name: "Rock", label: "Rock", image: "/images/rock.jpg" },
-    { name: "Latin", label: "Latin", image: "/images/latin.jpg" },
-    { name: "HipHop", label: "Hiphop", image: "/images/hiphop.jpg" },
+    { name: "pop", label: "Pop", image: "/images/pop.jpg" },
+    { name: "rock", label: "Rock", image: "/images/rock.jpg" },
+    { name: "latin", label: "Latin", image: "/images/latin.jpg" },
+    { name: "hiphop", label: "HipHop", image: "/images/hiphop.jpg" },
     { name: "randb", label: "R&B", image: "/images/rnb.jpg" },
-    { name: "Country", label: "Country", image: "/images/country.jpg" },
+    { name: "country", label: "Country", image: "/images/country.jpg" },
   ];
 
   const navLinkStyle = {
@@ -56,7 +56,13 @@ export default function Home() {
         borderBottom: "1px solid rgba(255, 255, 255, 0.1)",
         zIndex: 999
       }}>
-        <div style={{ color: "#1e3a8a", fontWeight: "bold", fontSize: "2rem", textShadow: "0 0 5px #1e3a8a" }}>
+        <div style={{ 
+          color: "#ffffff", 
+          fontFamily: "AMORIA, cursive", 
+          fontWeight: "bold", 
+          fontSize: "2rem", 
+          textShadow: "0 0 5px #ffffff" 
+        }}>
           TimeTunnel
         </div>
         <div style={{ display: "flex", gap: "3rem", paddingRight: "7rem" }}>
@@ -92,8 +98,9 @@ export default function Home() {
           fontSize: "4rem",
           fontWeight: "bold",
           marginBottom: "0.5rem",
-          color: "#1e3a8a",
-          textShadow: "0 0 10px #1e3a8a, 0 0 20px #1e3a8a"
+          color: "#ffffff",
+          fontFamily: "AMORIA, cursive",
+          textShadow: "0 0 10px #ffffff, 0 0 20px #ffffff"
         }}>
           TimeTunnel
         </h1>
@@ -161,37 +168,38 @@ export default function Home() {
         {/* Genre Buttons */}
         <div id="genres" style={{
           display: "flex",
-          gap: "2.7rem",
-          marginTop: "1rem",
-          marginBottom: "4rem",
+          justifyContent: "center",
+          alignItems: "flex-start",
           flexWrap: "wrap",
-          justifyContent: "center"
+          gap: "4rem",
+          maxWidth: "1200px",
+          margin: "10rem auto 0"
         }}>
           {genres.map((genre) => (
-  <a
-    key={genre.name}
-    href={`/genres/${genre.name.toLowerCase()}`}
-    style={{ textDecoration: 'none' }}
-  >
-    <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-      <div style={{
-        width: "120px",
-        height: "120px",
-        borderRadius: "50%",
-        overflow: "hidden",
-        border: "5px solid #1e3a8a",
-        boxShadow: "0 0 12px #1e3a8a",
-        marginBottom: "0.7rem"
-      }}>
-        <img src={genre.image} alt={genre.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-      </div>
-      <span style={{ color: "#fff", fontSize: "1.05rem", textShadow: "0 0 4px #1e3a8a" }}>
-        {genre.label}
-      </span>
-    </div>
-  </a>
-))}
-
+            <a
+              key={genre.name}
+              href={`/genres/${genre.name}`}
+              style={{ textDecoration: 'none' }}
+            >
+              <div style={{ textAlign: 'center', maxWidth: 200 }}>
+                <div style={{
+                  width: 180,
+                  height: 180,
+                  borderRadius: '50%',
+                  overflow: 'hidden',
+                  border: '4px solid #1e3a8a',
+                  boxShadow: '0 0 12px #1e3a8a',
+                  margin: '0 auto 12px',
+                  backgroundColor: '#000'
+                }}>
+                  <img src={genre.image} alt={genre.label} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+                </div>
+                <span style={{ color: "#fff", fontSize: "1.2rem", fontWeight: "bold", textShadow: "0 0 4px #1e3a8a" }}>
+                  {genre.label}
+                </span>
+              </div>
+            </a>
+          ))}
         </div>
       </main>
 

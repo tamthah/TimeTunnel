@@ -1,156 +1,80 @@
+// /pages/result.js
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 export default function ResultPage() {
   const router = useRouter();
   const { artist, year } = router.query;
-  const [setlists, setSetlists] = useState([]);
-  const [loading, setLoading] = useState(true);
+
+  const [tourName, setTourName] = useState("");
+  const [tourImage, setTourImage] = useState("");
+  const [concerts, setConcerts] = useState([]);
+  const [topSongs, setTopSongs] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    if (!artist || !year) return;
+    async function fetchData() {
+      if (!artist || !year) return;
 
-    const fetchSetlists = async () => {
       try {
-        const res = await fetch(`/api/setlist?artist=${artist}&year=${year}`);
-        const data = await res.json();
-        setSetlists(data.setlist || []);
-      } catch (err) {
-        console.error("Failed to fetch:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
+        const res = await fetch(`/api/concertData?artist=${artist}&year=${year}`);
+        if (!res.ok) throw new Error("Network error");
 
-    fetchSetlists();
+        const data = await res.json();
+        setTourName(data.tourName);
+        setTourImage(data.image);
+        setConcerts(data.concerts || []);
+        setTopSongs(data.topSongs || []);
+        setError(false);
+      } catch (err) {
+        console.error(err);
+        setError(true);
+      }
+    }
+
+    fetchData();
   }, [artist, year]);
 
-  // Top 3 songs logic
-  const getTopSongs = () => {
-    const songCount = {};
-    setlists.forEach((set) => {
-      const songs = set.sets?.set?.[0]?.song || [];
-      songs.forEach((song) => {
-        if (song.name) {
-          songCount[song.name] = (songCount[song.name] || 0) + 1;
-        }
-      });
-    });
-
-    return Object.entries(songCount)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 3)
-      .map(([song]) => song);
-  };
-
-  const topSongs = getTopSongs();
-
   return (
-    <div style={{
-      minHeight: "100vh",
-      background: "url('/images/background.jpg')",
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-      color: "#fff",
-      fontFamily: "'Courier New', Courier, monospace",
-      padding: "2rem"
-    }}>
-      {/* Tour Header */}
-      <div style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        backgroundColor: "rgba(0,0,0,0.5)",
-        padding: "1.5rem",
-        borderRadius: "1rem",
-        marginBottom: "2rem"
-      }}>
-        <h1 style={{
-          fontSize: "2.5rem",
-          fontWeight: "bold",
-          textShadow: "0 0 10px #00ffff"
-        }}>
-          {artist?.toUpperCase()} {year} Tour
+    <div style={{ backgroundImage: "url('/images/background.jpg')", minHeight: "100vh", color: "white", fontFamily: "'Courier New', monospace", padding: "2rem" }}>
+      <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <h1 style={{ fontSize: "3rem", textShadow: "0 0 10px #00ffff" }}>
+          {tourName || `${artist} ${year} Tour`}
         </h1>
-        <img
-          src="/images/logo.jpg"
-          alt="Mic Logo"
-          style={{ width: "80px", borderRadius: "10px", boxShadow: "0 0 15px #ff00ff" }}
-        />
-      </div>
-
-      {/* Main Layout */}
-      {loading ? (
-        <p style={{ fontSize: "1.2rem" }}>Loading setlists...</p>
-      ) : (
-        <div style={{ display: "flex", gap: "2rem", flexWrap: "wrap" }}>
-          {/* Left: Concert List */}
-          <div style={{
-            flex: "1",
-            minWidth: "280px",
-            maxHeight: "500px",
-            overflowY: "scroll",
-            backgroundColor: "rgba(0,0,0,0.4)",
-            padding: "1rem",
-            borderRadius: "1rem",
-            boxShadow: "0 0 8px #00ffff"
-          }}>
-            <h2 style={{ fontSize: "1.6rem", marginBottom: "1rem" }}>Concerts</h2>
-            {setlists.length === 0 ? (
-              <p>No concerts found.</p>
-            ) : (
-              <ul style={{ listStyle: "none", padding: 0 }}>
-                {setlists.map((s, i) => (
-                  <li key={i} style={{
-                    marginBottom: "1rem",
-                    paddingBottom: "0.5rem",
-                    borderBottom: "1px dashed #888"
-                  }}>
-                    <strong>{s.venue?.name}</strong><br />
-                    <span>{s.venue?.city?.name}, {s.venue?.city?.country?.name}</span><br />
-                    <em>{s.eventDate}</em>
-                  </li>
-                ))}
-              </ul>
-            )}
+        {tourImage && (
+          <div style={{ backgroundColor: "#111", padding: "0.5rem 1rem", borderRadius: "10px", boxShadow: "0 0 8px #ff00ff" }}>
+            <p>🎤 {tourImage}</p>
           </div>
+        )}
+      </header>
 
-          {/* Right: Top Songs */}
-          <div style={{
-            flex: "2",
-            display: "flex",
-            flexDirection: "column",
-            gap: "1.5rem"
-          }}>
-            <h2 style={{ fontSize: "1.6rem" }}>Top 3 Tracklists</h2>
-            <div style={{
-              display: "flex",
-              gap: "1rem",
-              flexWrap: "wrap"
-            }}>
-              {topSongs.map((song, i) => (
-                <div key={i} style={{
-                  flex: "1",
-                  minWidth: "150px",
-                  height: "150px",
-                  backgroundColor: "rgba(0,0,0,0.5)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderRadius: "1rem",
-                  fontSize: "1.1rem",
-                  boxShadow: "0 0 8px #00ffff",
-                  textAlign: "center",
-                  padding: "1rem"
-                }}>
-                  🎵 {song}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+      {error && (
+        <p style={{ color: "red", marginTop: "1rem" }}>❌ Failed to load data. Please try again.</p>
       )}
+
+      <div style={{ display: "flex", marginTop: "2rem", gap: "2rem", flexWrap: "wrap" }}>
+        <div style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.4)", padding: "1rem", borderRadius: "1rem", border: "2px solid #00ffff" }}>
+          <h2 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>Concerts</h2>
+          <ul>
+            {concerts.map((concert, i) => (
+              <li key={i} style={{ marginBottom: "0.5rem" }}>
+                • {concert.location} — {concert.date}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.4)", padding: "1rem", borderRadius: "1rem", border: "2px solid #ff00ff" }}>
+          <h2 style={{ fontSize: "1.5rem", marginBottom: "1rem" }}>Top 5 Songs</h2>
+          <ol>
+            {topSongs.map((song, i) => (
+              <li key={i} style={{ marginBottom: "0.5rem" }}>
+                🎵 {song}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
     </div>
   );
 }
-

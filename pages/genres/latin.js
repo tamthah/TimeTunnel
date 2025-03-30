@@ -5,9 +5,9 @@ const data = {
   quote: '"Debí tirarme fotos cuando lloraba por ti." – Bad Bunny – DTMF',
   background: 'Latinbg.jpg',
   artists: [
-    { name: 'Bad Bunny', tour: '"World\'s Hottest Tour" (2022)', image: 'badbunny.jpg', videoUrl: 'https://youtube.com/link' },
-    { name: 'Shakira', tour: '"Oral Fixation World Tour" (2006-2007)', image: 'shakira.jpg', videoUrl: 'https://youtube.com/link' },
-    { name: 'Selena', tour: '"Amor Prohibido Tour" (1994-1995)', image: 'selena.jpg', videoUrl: 'https://youtube.com/link' },
+    { name: 'Bad Bunny', tour: '"World\'s Hottest Tour" (2022)', image: 'badbunny.jpg', videoUrl: 'https://youtube.com/playlist?list=PL8hc5b19QC9KyjIPSmMUrxLAY97n2kdhY&si=msGu8l9t9ejGQYKa' },
+    { name: 'Shakira', tour: '"Oral Fixation World Tour" (2006-2007)', image: 'shakira.jpg', videoUrl: 'https://youtube.com/playlist?list=PL8hc5b19QC9LtMe4AVlwCJiVmfzWsYs3k&si=BSJ1kaanCmYaeHJG' },
+    { name: 'Selena', tour: '"Amor Prohibido Tour" (1994-1995)', image: 'selena.jpg', videoUrl: 'https://youtube.com/playlist?list=PL8hc5b19QC9KNRMd2hbHlN-YNRc4LtEXb&si=mACbKFsDuYnFRy6L' },
   ]
 }
 

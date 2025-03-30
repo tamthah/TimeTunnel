@@ -5,9 +5,9 @@ const data = {
   quote: '"I\'m the real Slim Shady, yes I\’m the real Shady." – Eminem – The Real Slim Shady',
   background: 'Hip-hopbg.jpg',
   artists: [
-    { name: 'Kendric Lamar', tour: '"The Big Steppers Tour"  (2022)', image: 'kendric.jpg', videoUrl: 'https://youtube.com/link' },
-    { name: 'J Cole', tour: '"Forest Hills Drive Tour" (2015)', image: 'jcole.jpg', videoUrl: 'https://youtube.com/link' },
-    { name: 'Eminem', tour: '“The Monster Tour” (2014)', image: 'eminem.jpg', videoUrl: 'https://youtube.com/link' },
+    { name: 'Kendric Lamar', tour: '"The Big Steppers Tour"  (2022)', image: 'kendric.jpg', videoUrl: 'https://youtube.com/playlist?list=PL8hc5b19QC9KKtIhk30Nq-DB0bP7yk-_Z&si=8rTr3Si640cUcGIt' },
+    { name: 'J Cole', tour: '"Forest Hills Drive Tour" (2015)', image: 'jcole.jpg', videoUrl: 'https://youtube.com/playlist?list=PL8hc5b19QC9J3TmbmXqsFfnQ74cr-sdF1&si=WWl0RcKL8SAb0lcr' },
+    { name: 'Eminem', tour: '“The Monster Tour” (2014)', image: 'eminem.jpg', videoUrl: 'https://youtube.com/playlist?list=PL8hc5b19QC9LsA-HXsApvyL1_ZsC1zQ1E&si=WS8eIoRCbWm-VGhB' },
   ]
 }
 

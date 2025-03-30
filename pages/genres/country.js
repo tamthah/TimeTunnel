@@ -5,9 +5,9 @@ const data = {
   quote: '"Take me home, country roads, to the place I belong." – – John Denver – Country Roads',
   background: 'Countrybg.jpg',
   artists: [
-    { name: 'Morgan Wallen', tour: '“One Night At A Time World Tour” (2024)', image: 'morganwallen.jpg', videoUrl: 'https://youtube.com/link' },
-    { name: 'Carrie Underwood', tour: '"The Storyteller Tour – Stories in the Round” (2016)', image: 'carrieunderwood.jpg', videoUrl: 'https://youtube.com/link' },
-    { name: 'Tim McGraw', tour: '“Soul2Soul II Tour” (2006-2007)', image: 'timmcgraw.jpg', videoUrl: 'https://youtube.com/link' },
+    { name: 'Morgan Wallen', tour: '“One Night At A Time World Tour” (2024)', image: 'morganwallen.jpg', videoUrl: 'https://youtube.com/playlist?list=PL8hc5b19QC9L9ikFgQ_jqchIiuWkO_h8w&si=BYxHBgibSTahZ-wY' },
+    { name: 'Carrie Underwood', tour: '"The Storyteller Tour – Stories in the Round” (2016)', image: 'carrieunderwood.jpg', videoUrl: 'https://youtube.com/playlist?list=PL8hc5b19QC9Ld2LQatNtbJxhOe8apkrW-&si=wjvifUuhvBEzt_sF' },
+    { name: 'Tim McGraw', tour: '“Soul2Soul II Tour” (2006-2007)', image: 'timmcgraw.jpg', videoUrl: 'https://youtube.com/playlist?list=PL8hc5b19QC9J2kBN4QWM6wW3s_tafNdtb&si=KSemue8_-414kZXq' },
   ]
 }
 

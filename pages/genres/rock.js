@@ -5,9 +5,9 @@ const data = {
   quote: '"Now I’m falling asleep and she’s calling a cab..." – The Killers – Mr. Brightside',
   background: 'Rockbg.jpg',
   artists: [
-    { name: 'Green Day', tour: '"The Saviors Tour" (2024)', image: 'greenday.jpg', videoUrl: 'https://youtube.com/link' },
-    { name: 'The Rolling Stones', tour: '"A Bigger Bang Tour" (2005-2007)', image: 'therollingstone.jpg', videoUrl: 'https://youtube.com/link' },
-    { name: 'Radiohead', tour: '"Bonnaroo Festival" (2006)', image: 'radiohead.jpg', videoUrl: 'https://youtube.com/link' },
+    { name: 'Green Day', tour: '"The Saviors Tour" (2024)', image: 'greenday.jpg', videoUrl: 'https://youtube.com/playlist?list=PL8hc5b19QC9InybqSPHj_asuspZLnPokU&si=4SadcFczDmgMU5lF' },
+    { name: 'The Rolling Stones', tour: '"A Bigger Bang Tour" (2005-2007)', image: 'therollingstone.jpg', videoUrl: 'https://youtube.com/playlist?list=PL8hc5b19QC9JPAAvCANUb2Ck4xS5wvgCh&si=wM9yWgKIT6STJVRo' },
+    { name: 'Radiohead', tour: '"Bonnaroo Festival" (2006)', image: 'radiohead.jpg', videoUrl: 'https://youtube.com/playlist?list=PL8hc5b19QC9KDtp7dRy_shJcruSM1TH7u&si=fRGfu5tvUYkojyhE' },
   ]
 }
 

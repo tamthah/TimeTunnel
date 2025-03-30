@@ -5,7 +5,6 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY);
 const fallbackTours = {
   "Taylor Swift-2024": {
     tourName: "Eras Tour (2024 Edition)",
-    image: "Taylor Swift on a dazzling stage surrounded by lights and fans",
     concerts: [
       { location: "Tokyo, Japan", date: "February 7, 2024" },
       { location: "Sydney, Australia", date: "March 2, 2024" },
@@ -33,7 +32,6 @@ const fallbackTours = {
   },
   "Rihanna-2011": {
     tourName: "The Loud Tour",
-    image: "rihanna loud tour stage performance with red hair and spotlight",
     concerts: [
       { location: "Baltimore, USA", date: "June 4, 2011" },
       { location: "Toronto, Canada", date: "June 6, 2011" },
@@ -59,7 +57,6 @@ const fallbackTours = {
   },
   "Britney Spears-2009": {
     tourName: "The Circus Starring Britney Spears",
-    image: "britney spears circus tour with trapeze artists and glowing red curtain",
     concerts: [
       { location: "New Orleans, USA", date: "March 3, 2009" },
       { location: "Houston, USA", date: "March 16, 2009" },
@@ -85,7 +82,6 @@ const fallbackTours = {
   },
   "Green Day-2024": {
     tourName: "The Saviors Tour",
-    image: "Green Day live with pyrotechnics and punk energy on a massive 2024 stage",
     concerts: [
       { location: "San Diego, USA", date: "March 15, 2024" },
       { location: "Phoenix, USA", date: "March 18, 2024" },
@@ -111,7 +107,6 @@ const fallbackTours = {
   },
   "The Rolling Stones-2005": {
     tourName: "A Bigger Bang Tour",
-    image: "The Rolling Stones rocking out under giant stage lights on their global tour",
     concerts: [
       { location: "Boston, USA", date: "August 21, 2005" },
       { location: "Chicago, USA", date: "September 13, 2005" },
@@ -137,7 +132,6 @@ const fallbackTours = {
   },
   "Radiohead-2006": {
     tourName: "Bonnaroo Festival",
-    image: "Radiohead's ethereal light show under the Tennessee night sky at Bonnaroo",
     concerts: [
       { location: "Manchester, USA (Bonnaroo)", date: "June 17, 2006" },
       { location: "New York City, USA", date: "June 20, 2006" },
@@ -159,7 +153,6 @@ const fallbackTours = {
   },
   "Bad Bunny-2022": {
     tourName: "World's Hottest Tour",
-    image: "Bad Bunny on a beach-themed stage with fireworks and dancing fans",
     concerts: [
       { location: "Orlando, USA", date: "August 5, 2022" },
       { location: "Miami, USA", date: "August 12, 2022" },
@@ -185,7 +178,6 @@ const fallbackTours = {
   },
   "Shakira-2006": {
     tourName: "Oral Fixation World Tour",
-    image: "Shakira belly dancing under vivid lights with an international crowd",
     concerts: [
       { location: "San Diego, USA", date: "August 9, 2006" },
       { location: "Los Angeles, USA", date: "August 11, 2006" },
@@ -211,7 +203,6 @@ const fallbackTours = {
   },
   "Selena-1994": {
     tourName: "Amor Prohibido Tour",
-    image: "Selena in a purple jumpsuit performing for passionate fans in 90s Tejano glory",
     concerts: [
       { location: "Corpus Christi, USA", date: "March 1, 1994" },
       { location: "Houston, USA (Astrodome)", date: "February 26, 1995" },
@@ -237,7 +228,6 @@ const fallbackTours = {
   },
   "Kendrick Lamar-2022": {
     tourName: "The Big Steppers Tour",
-    image: "Kendrick Lamar performing with minimalistic lighting and expressive choreography",
     concerts: [
       { location: "San Diego, USA", date: "July 19, 2022" },
       { location: "Phoenix, USA", date: "July 22, 2022" },
@@ -263,7 +253,6 @@ const fallbackTours = {
   },
   "J. Cole-2015": {
     tourName: "Forest Hills Drive Tour",
-    image: "J. Cole in a laid-back spotlighted set evoking a homecoming vibe",
     concerts: [
       { location: "Phoenix, USA", date: "April 10, 2015" },
       { location: "Denver, USA", date: "April 14, 2015" },
@@ -289,7 +278,6 @@ const fallbackTours = {
   },
   "Eminem-2014": {
     tourName: "The Monster Tour",
-    image: "Eminem and Rihanna headlining a dark, high-energy stadium show",
     concerts: [
       { location: "Los Angeles, USA", date: "August 7, 2014" },
       { location: "New York City, USA", date: "August 16, 2014" },
@@ -315,7 +303,6 @@ const fallbackTours = {
   },
   "SZA-2023": {
     tourName: "SOS Tour",
-    image: "SZA performing in front of an oceanic backdrop with glowing blue lights",
     concerts: [
       { location: "Columbus, USA", date: "February 21, 2023" },
       { location: "Chicago, USA", date: "February 22, 2023" },
@@ -341,7 +328,6 @@ const fallbackTours = {
   },
   "Frank Ocean-2012": {
     tourName: "Channel Orange Tour",
-    image: "Frank Ocean in moody spotlight with surreal visuals and minimalist staging",
     concerts: [
       { location: "Los Angeles, USA", date: "July 13, 2012" },
       { location: "San Francisco, USA", date: "July 17, 2012" },
@@ -367,7 +353,6 @@ const fallbackTours = {
   },
   "Usher-2010": {
     tourName: "Raymond v. Raymond Tour",
-    image: "Usher with a full dance crew and LED screens lighting up the stage",
     concerts: [
       { location: "Seattle, USA", date: "November 10, 2010" },
       { location: "Vancouver, Canada", date: "November 11, 2010" },
@@ -393,7 +378,6 @@ const fallbackTours = {
   },
   "Morgan Wallen-2024": {
     tourName: "One Night At A Time World Tour",
-    image: "Morgan Wallen standing solo on stage under warm amber lights with acoustic backdrop",
     concerts: [
       { location: "Indianapolis, USA", date: "April 4, 2024" },
       { location: "Milwaukee, USA", date: "April 20, 2024" },
@@ -419,7 +403,6 @@ const fallbackTours = {
   },
   "Carrie Underwood-2016": {
     tourName: "The Storyteller Tour - Stories in the Round",
-    image: "Carrie Underwood surrounded by a 360° crowd, spotlights and country-glam flair",
     concerts: [
       { location: "Jacksonville, USA", date: "January 30, 2016" },
       { location: "Atlanta, USA", date: "February 1, 2016" },
@@ -445,7 +428,6 @@ const fallbackTours = {
   },
   "Tim McGraw-2006": {
     tourName: "Soul2Soul II Tour",
-    image: "Tim McGraw and Faith Hill on a dramatic stage with romantic lighting and silhouettes",
     concerts: [
       { location: "Columbus, USA", date: "April 21, 2006" },
       { location: "St. Louis, USA", date: "April 28, 2006" },
@@ -471,7 +453,6 @@ const fallbackTours = {
   },
   "BTS-2018": {
     tourName: "Love Yourself Tour",
-    image: "BTS on a grand LED-lit stage",
     concerts: [
       { location: "Seoul, South Korea", date: "August 25, 2018" },
       { location: "Los Angeles, USA", date: "September 5, 2018" },
@@ -513,7 +494,6 @@ Create a fictional concert tour for ${artist} in ${year}.
 Only return strict JSON, no markdown or explanations.
 {
   "tourName": "string",
-  "image": "short description of tour image",
   "concerts": [
     { "location": "City, Country", "date": "Month Day, Year" }
   ],

@@ -88,7 +88,7 @@ export default function Home() {
           alt="TimeTunnel Logo"
           style={{
             width: "160px",
-            marginBottom: "2.5rem",
+            marginBottom: "0.1rem",
             borderRadius: "12px",
             boxShadow: "0 0 20px #ff00ff"
           }}
@@ -97,7 +97,7 @@ export default function Home() {
         <h1 style={{
           fontSize: "4rem",
           fontWeight: "bold",
-          marginBottom: "0.8rem",
+          marginBottom: "0.5rem",
           color: "#ffffff",
           fontFamily: "AMORIA, cursive",
           textShadow: "0 0 10px #ffffff, 0 0 20px #ffffff"
@@ -181,7 +181,7 @@ export default function Home() {
               href={`/genres/${genre.name}`}
               style={{ textDecoration: 'none' }}
             >
-              <div style={{ textAlign: 'center', maxWidth: 280 }}>
+              <div style={{ textAlign: 'center', maxWidth: 240 }}>
                 <div style={{
                   width: 220,
                   height: 220,

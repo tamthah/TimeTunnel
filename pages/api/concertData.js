@@ -1,4 +1,3 @@
-// /pages/api/concertData.js
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY);
@@ -468,6 +467,32 @@ const fallbackTours = {
       "I Like It, I Love It",
       "Real Good Man",
       "Felt Good on My Lips"
+    ]
+  },
+  "BTS-2018": {
+    tourName: "Love Yourself Tour",
+    image: "BTS on a grand LED-lit stage",
+    concerts: [
+      { location: "Seoul, South Korea", date: "August 25, 2018" },
+      { location: "Los Angeles, USA", date: "September 5, 2018" },
+      { location: "Oakland, USA", date: "September 12, 2018" },
+      { location: "Fort Worth, USA", date: "September 15, 2018" },
+      { location: "Newark, USA", date: "September 28, 2018" },
+      { location: "Chicago, USA", date: "October 2, 2018" },
+      { location: "London, UK", date: "October 9, 2018" },
+      { location: "Paris, France", date: "October 19, 2018" }
+    ],
+    topSongs: [
+      "Fake Love",
+      "DNA",
+      "IDOL",
+      "MIC Drop",
+      "Anpanman",
+      "The Truth Untold",
+      "Euphoria",
+      "I'm Fine",
+      "Answer: Love Myself",
+      "Go Go"
     ]
   }
 };

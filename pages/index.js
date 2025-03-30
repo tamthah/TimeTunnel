@@ -181,10 +181,10 @@ export default function Home() {
               href={`/genres/${genre.name}`}
               style={{ textDecoration: 'none' }}
             >
-              <div style={{ textAlign: 'center', maxWidth: 200 }}>
+              <div style={{ textAlign: 'center', maxWidth: 280 }}>
                 <div style={{
-                  width: 180,
-                  height: 180,
+                  width: 220,
+                  height: 220,
                   borderRadius: '50%',
                   overflow: 'hidden',
                   border: '4px solid #1e3a8a',

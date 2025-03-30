@@ -88,7 +88,7 @@ export default function Home() {
           alt="TimeTunnel Logo"
           style={{
             width: "160px",
-            marginBottom: "0.1rem",
+            marginBottom: "2.5rem",
             borderRadius: "12px",
             boxShadow: "0 0 20px #ff00ff"
           }}
@@ -97,7 +97,7 @@ export default function Home() {
         <h1 style={{
           fontSize: "4rem",
           fontWeight: "bold",
-          marginBottom: "0.5rem",
+          marginBottom: "0.8rem",
           color: "#ffffff",
           fontFamily: "AMORIA, cursive",
           textShadow: "0 0 10px #ffffff, 0 0 20px #ffffff"

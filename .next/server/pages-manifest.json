@@ -2,6 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/genres/randb": "pages/genres/randb.js",
-  "/genres/pop": "pages/genres/pop.js"
+  "/": "pages/index.js"
 }

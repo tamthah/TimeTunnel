@@ -391,6 +391,84 @@ const fallbackTours = {
       "Yeah!",
       "U Got It Bad"
     ]
+  },
+  "Morgan Wallen-2024": {
+    tourName: "One Night At A Time World Tour",
+    image: "Morgan Wallen standing solo on stage under warm amber lights with acoustic backdrop",
+    concerts: [
+      { location: "Indianapolis, USA", date: "April 4, 2024" },
+      { location: "Milwaukee, USA", date: "April 20, 2024" },
+      { location: "Atlanta, USA", date: "May 3, 2024" },
+      { location: "Dallas, USA", date: "May 16, 2024" },
+      { location: "Los Angeles, USA", date: "June 6, 2024" },
+      { location: "Toronto, Canada", date: "June 27, 2024" },
+      { location: "London, UK", date: "July 10, 2024" },
+      { location: "Nashville, USA", date: "August 23, 2024" }
+    ],
+    topSongs: [
+      "Last Night",
+      "Wasted On You",
+      "You Proof",
+      "Sand In My Boots",
+      "7 Summers",
+      "More Than My Hometown",
+      "Chasin’ You",
+      "Whiskey Glasses",
+      "Thought You Should Know",
+      "Everything I Love"
+    ]
+  },
+  "Carrie Underwood-2016": {
+    tourName: "The Storyteller Tour - Stories in the Round",
+    image: "Carrie Underwood surrounded by a 360° crowd, spotlights and country-glam flair",
+    concerts: [
+      { location: "Jacksonville, USA", date: "January 30, 2016" },
+      { location: "Atlanta, USA", date: "February 1, 2016" },
+      { location: "New Orleans, USA", date: "February 3, 2016" },
+      { location: "Baltimore, USA", date: "February 6, 2016" },
+      { location: "Toronto, Canada", date: "February 17, 2016" },
+      { location: "Chicago, USA", date: "March 1, 2016" },
+      { location: "Denver, USA", date: "March 15, 2016" },
+      { location: "Los Angeles, USA", date: "April 5, 2016" }
+    ],
+    topSongs: [
+      "Church Bells",
+      "Heartbeat",
+      "Smoke Break",
+      "Blown Away",
+      "Something in the Water",
+      "Undo It",
+      "Cowboy Casanova",
+      "Before He Cheats",
+      "Jesus, Take the Wheel",
+      "Dirty Laundry"
+    ]
+  },
+  "Tim McGraw-2006": {
+    tourName: "Soul2Soul II Tour",
+    image: "Tim McGraw and Faith Hill on a dramatic stage with romantic lighting and silhouettes",
+    concerts: [
+      { location: "Columbus, USA", date: "April 21, 2006" },
+      { location: "St. Louis, USA", date: "April 28, 2006" },
+      { location: "Chicago, USA", date: "May 5, 2006" },
+      { location: "New York City, USA", date: "May 19, 2006" },
+      { location: "Atlanta, USA", date: "June 2, 2006" },
+      { location: "Denver, USA", date: "June 10, 2006" },
+      { location: "Las Vegas, USA", date: "July 1, 2006" },
+      { location: "Dallas, USA", date: "August 12, 2006" }
+    ],
+    topSongs: [
+      "Live Like You Were Dying",
+      "Humble and Kind",
+      "My Little Girl",
+      "Don't Take the Girl",
+      "It's Your Love",
+      "Just to See You Smile",
+      "Something Like That",
+      "I Like It, I Love It",
+      "Real Good Man",
+      "Felt Good on My Lips"
+    ]
   }
 };
 

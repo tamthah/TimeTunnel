@@ -1,17 +1,18 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   const [artist, setArtist] = useState("");
   const [year, setYear] = useState("");
-  const [setlists, setSetlists] = useState([]);
-  const [loading, setLoading] = useState(false);
+
   const genres = [
     { name: "Pop", image: "/images/pop.jpg" },
     { name: "Rock", image: "/images/rock.jpg" },
     { name: "Latin", image: "/images/latin.jpg" },
     { name: "HipHop", image: "/images/hiphop.jpg" },
     { name: "R&B", image: "/images/rnb.jpg" },
-    { name: "Country", image: "/images/country.jpg" }
+    { name: "Country", image: "/images/country.jpg" },
   ];
 
   const navLinkStyle = {
@@ -23,16 +24,9 @@ export default function Home() {
     padding: "0.75rem 1.25rem"
   };
 
-  const fetchSetlists = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch(`/api/setlist?artist=${artist}&year=${year}`);
-      const data = await response.json();
-      setSetlists(data.setlists || []);
-    } catch (error) {
-      console.error("Error fetching setlists:", error);
-    }
-    setLoading(false);
+  const handleSearch = () => {
+    if (!artist || !year) return;
+    router.push(`/result?artist=${encodeURIComponent(artist)}&year=${encodeURIComponent(year)}`);
   };
 
   return (
@@ -48,7 +42,7 @@ export default function Home() {
       position: "relative",
       paddingTop: "5.5rem"
     }}>
-      {/* Top Navigation Bar */}
+      {/* Navigation Bar */}
       <nav style={{
         position: "fixed",
         top: 0,
@@ -73,6 +67,7 @@ export default function Home() {
         </div>
       </nav>
 
+      {/* Main Content */}
       <main style={{
         display: "flex",
         flexDirection: "column",
@@ -86,8 +81,8 @@ export default function Home() {
           src="/images/logo.jpg"
           alt="TimeTunnel Logo"
           style={{
-            width: "130px",
-            marginBottom: "1rem",
+            width: "160px",
+            marginBottom: "0.1rem",
             borderRadius: "12px",
             boxShadow: "0 0 20px #ff00ff"
           }}
@@ -96,14 +91,14 @@ export default function Home() {
         <h1 style={{
           fontSize: "4rem",
           fontWeight: "bold",
-          marginBottom: "0.1rem",
+          marginBottom: "0.5rem",
           color: "#1e3a8a",
           textShadow: "0 0 10px #1e3a8a, 0 0 20px #1e3a8a"
         }}>
           TimeTunnel
         </h1>
 
-        <p style={{ fontSize: "1.3rem", marginBottom: "2.5rem", color: "#eeeeee" }}>
+        <p style={{ fontSize: "1.3rem", marginBottom: "2rem", color: "#eeeeee" }}>
           Explore real concert setlists from your favorite artists.
         </p>
 
@@ -111,7 +106,7 @@ export default function Home() {
         <div style={{
           display: "flex",
           gap: "1.4rem",
-          marginBottom: "1.8rem",
+          marginBottom: "2rem",
           flexWrap: "wrap",
           justifyContent: "center"
         }}>
@@ -146,7 +141,7 @@ export default function Home() {
             }}
           />
           <button
-            onClick={fetchSetlists}
+            onClick={handleSearch}
             style={{
               padding: "1rem 2rem",
               borderRadius: "8px",
@@ -163,7 +158,7 @@ export default function Home() {
           </button>
         </div>
 
-        {/* Genre Buttons with Images */}
+        {/* Genre Buttons */}
         <div id="genres" style={{
           display: "flex",
           gap: "2.7rem",
@@ -193,34 +188,9 @@ export default function Home() {
             </div>
           ))}
         </div>
-
-        {/* Setlist Results */}
-        {loading && <p style={{ color: "#999" }}>Loading setlists...</p>}
-
-        <ul style={{
-          maxWidth: "600px",
-          textAlign: "left",
-          listStyle: "none",
-          padding: 0
-        }}>
-          {setlists.map((s, i) => (
-            <li key={i} style={{
-              marginBottom: "1.5rem",
-              borderBottom: "1px dashed #444",
-              paddingBottom: "1rem"
-            }}>
-              <strong style={{ color: "#00ffff" }}>{s.eventDate}</strong> — {s.venue?.name}, {s.venue?.city?.name}
-              <ul style={{ marginLeft: "1rem", marginTop: "0.5rem" }}>
-                {s.sets?.set?.[0]?.song?.map((song, idx) => (
-                  <li key={idx} style={{ color: "#ccc" }}>🎵 {song.name}</li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
       </main>
 
-      {/* Sections */}
+      {/* About Section */}
       <section id="about" style={{ padding: "6rem 2rem 4rem", color: "#fff" }}>
         <h2 style={{ fontSize: "2.2rem", marginBottom: "1rem", textShadow: "0 0 6px #ff00ff" }}>About TimeTunnel</h2>
         <p style={{ fontSize: "1.1rem", maxWidth: "800px", margin: "0 auto" }}>
@@ -228,6 +198,7 @@ export default function Home() {
         </p>
       </section>
 
+      {/* Contact Section */}
       <section id="contact" style={{ padding: "4rem 2rem", color: "#fff" }}>
         <h2 style={{ fontSize: "2.2rem", marginBottom: "1rem", textShadow: "0 0 6px #ff00ff" }}>Contact</h2>
         <p style={{ fontSize: "1.1rem" }}>Email us at <a href="mailto:info@timetunnel.app" style={{ color: "#00ffff", textDecoration: "none" }}>info@timetunnel.app</a></p>
